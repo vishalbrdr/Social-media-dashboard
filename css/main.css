@@ -1,0 +1,407 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;800&display=swap");
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  min-height: 100vh;
+  background-color: #1e202a;
+  font-family: "Inter";
+}
+
+body.toggle {
+  background-color: white;
+}
+
+.container {
+  width: 75%;
+  max-width: 160rem;
+}
+
+main {
+  background-color: #1f212e;
+  height: 33vh;
+  border-radius: 0 0 2rem 2rem;
+  display: flex;
+  justify-content: center;
+  padding-top: 4rem;
+  transition: 300ms;
+}
+
+@media screen and (max-width: 700px) {
+  main {
+    height: 40vh;
+  }
+}
+
+main .container {
+  display: flex;
+  flex-direction: column;
+}
+
+main nav {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+@media screen and (max-width: 700px) {
+  main nav {
+    flex-direction: column;
+  }
+}
+
+main nav hr {
+  display: none;
+  height: 0;
+  border: none;
+  border-top: 1px solid #8b97c6;
+}
+
+@media screen and (max-width: 700px) {
+  main nav hr {
+    display: block;
+    margin: 2rem 0;
+  }
+}
+
+main nav .heading h1 {
+  color: white;
+  font-size: 2.7rem;
+}
+
+main nav .heading p {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #8b97c6;
+}
+
+main nav .dark-mode-container {
+  align-self: center;
+  display: flex;
+}
+
+@media screen and (max-width: 700px) {
+  main nav .dark-mode-container {
+    align-self: stretch;
+    justify-content: space-between;
+  }
+}
+
+main nav .dark-mode-container span {
+  color: #8b97c6;
+  font-size: 1.8rem;
+  font-weight: 800;
+  margin-right: 1rem;
+  align-self: center;
+}
+
+main nav .dark-mode-container .dark-mode-toggle {
+  align-self: center;
+  width: 5.3rem;
+  height: 2.6rem;
+  border-radius: 6rem;
+  background: linear-gradient(to right, #378fe6, #3eda82);
+  position: relative;
+  display: flex;
+  align-items: center;
+  transition: 300ms;
+}
+
+main nav .dark-mode-container .dark-mode-toggle-btn {
+  position: absolute;
+  left: 0;
+  width: 1.8rem;
+  height: 1.8rem;
+  background: #1f212e;
+  border-radius: 50%;
+  margin: 0.5em;
+  transition: transform 300ms;
+}
+
+main nav .dark-mode-container .dark-mode-toggle:hover {
+  background: linear-gradient(to right, #378fe6, #3eda82);
+  cursor: pointer;
+}
+
+main .followers-cards-conatiner {
+  margin-top: 5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  grid-gap: 2rem;
+}
+
+main .followers-cards-conatiner .followers-card {
+  background-color: #252a41;
+  min-height: 20rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  overflow-x: hidden;
+  position: relative;
+  transition: 300ms ease-in-out;
+}
+
+main .followers-cards-conatiner .followers-card:hover {
+  cursor: pointer;
+  background: #374062;
+}
+
+main .followers-cards-conatiner .followers-card::before {
+  content: "";
+  width: 100%;
+  position: absolute;
+  top: 0;
+  height: 0.5rem;
+}
+
+main .followers-cards-conatiner .followers-card:nth-of-type(1)::before {
+  background-color: #198ff5;
+}
+
+main .followers-cards-conatiner .followers-card:nth-of-type(2)::before {
+  background-color: #1ca0f2;
+}
+
+main .followers-cards-conatiner .followers-card:nth-of-type(3)::before {
+  background-image: linear-gradient(to right, #fdc468, #df4996);
+}
+
+main .followers-cards-conatiner .followers-card:nth-of-type(4)::before {
+  background-color: #c4032a;
+}
+
+main .followers-cards-conatiner .followers-card .username {
+  display: flex;
+}
+
+main .followers-cards-conatiner .followers-card .username span {
+  font-size: 1.4rem;
+  color: #8b97c6;
+  margin-left: 1rem;
+  font-weight: bold;
+}
+
+main .followers-cards-conatiner .followers-card .followers-number {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+main .followers-cards-conatiner .followers-card .followers-number h3 {
+  color: white;
+  font-size: 6rem;
+}
+
+main .followers-cards-conatiner .followers-card .followers-number span {
+  color: #63687e;
+  text-transform: uppercase;
+  font-size: 1.4rem;
+  letter-spacing: 0.5rem;
+}
+
+main .followers-cards-conatiner .followers-card .followers-increase, main .followers-cards-conatiner .followers-card .followers-decrease {
+  font-size: 1.4rem;
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+}
+
+main .followers-cards-conatiner .followers-card .followers-increase span, main .followers-cards-conatiner .followers-card .followers-decrease span {
+  margin-left: 0.5rem;
+}
+
+main .followers-cards-conatiner .followers-card .followers-increase {
+  color: #1db489;
+}
+
+main .followers-cards-conatiner .followers-card .followers-decrease {
+  color: #dc414c;
+}
+
+main h2.overview-heading {
+  color: white;
+  font-size: 2.7rem;
+  margin: 5rem 0 2rem 0;
+}
+
+main .overview-container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  grid-gap: 2rem;
+}
+
+main .overview-container .overview-card {
+  height: 13rem;
+  padding: 2.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #252a41;
+  border-radius: 0.5rem;
+  transition: 300ms ease-in-out;
+}
+
+main .overview-container .overview-card:hover {
+  cursor: pointer;
+  background: #374062;
+}
+
+main .overview-container .overview-card .card-footer,
+main .overview-container .overview-card .card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+main .overview-container .overview-card .card-footer h3,
+main .overview-container .overview-card .card-header h3 {
+  font-size: 1.8rem;
+  color: #8b97c6;
+}
+
+main .overview-container .overview-card .card-footer span.number,
+main .overview-container .overview-card .card-header span.number {
+  font-size: 3.5rem;
+  font-weight: bold;
+  color: white;
+}
+
+main .overview-container .overview-card .card-footer .increase,
+main .overview-container .overview-card .card-footer .decrease,
+main .overview-container .overview-card .card-header .increase,
+main .overview-container .overview-card .card-header .decrease {
+  display: flex;
+  align-items: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+main .overview-container .overview-card .card-footer .increase img,
+main .overview-container .overview-card .card-footer .decrease img,
+main .overview-container .overview-card .card-header .increase img,
+main .overview-container .overview-card .card-header .decrease img {
+  margin-right: 0.3rem;
+}
+
+main .overview-container .overview-card .card-footer .increase,
+main .overview-container .overview-card .card-header .increase {
+  color: #1db489;
+}
+
+main .overview-container .overview-card .card-footer .decrease,
+main .overview-container .overview-card .card-header .decrease {
+  color: #dc414c;
+}
+
+main .overview-container .overview-card .card-footer {
+  align-items: baseline;
+}
+
+main .attribution {
+  font-size: 1.2rem;
+  color: white;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+main .attribution a {
+  color: #8b97c6;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+main.toggle {
+  background-color: #f5f7ff;
+}
+
+main.toggle .heading h1 {
+  color: #1e202a;
+}
+
+main.toggle .heading p {
+  color: #63687e;
+}
+
+main.toggle .dark-mode-container span {
+  color: #63687e;
+}
+
+main.toggle .dark-mode-container .dark-mode-toggle {
+  background: #aeb3cb;
+}
+
+main.toggle .dark-mode-container .dark-mode-toggle .dark-mode-toggle-btn {
+  transform: translateX(2.45rem);
+  background: white;
+}
+
+main.toggle .followers-card {
+  background-color: #f0f2fa;
+}
+
+main.toggle .followers-card:hover {
+  background-color: #dadff1 !important;
+}
+
+main.toggle .followers-card:hover {
+  background: #374062;
+}
+
+main.toggle .followers-card .username span {
+  color: #63687e;
+}
+
+main.toggle .followers-card .followers-number h3 {
+  color: #1e202a;
+}
+
+main.toggle .followers-card .followers-number span {
+  color: #63687e;
+}
+
+main.toggle .overview-heading {
+  color: #1e202a;
+}
+
+main.toggle .overview-container .overview-card {
+  background-color: #f0f2fa;
+}
+
+main.toggle .overview-container .overview-card:hover {
+  background-color: #dadff1;
+}
+
+main.toggle .overview-container .overview-card h3 {
+  color: #63687e;
+}
+
+main.toggle .overview-container .overview-card .card-footer .number {
+  color: #1e202a;
+}
+
+main.toggle .attribution {
+  color: #1e202a;
+}
+
+main.toggle .attribution a {
+  color: #63687e;
+}
