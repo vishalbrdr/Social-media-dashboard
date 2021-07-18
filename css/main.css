@@ -202,7 +202,7 @@ main .followers-cards-conatiner .followers-card .followers-number {
   align-items: center;
 }
 
-main .followers-cards-conatiner .followers-card .followers-number h3 {
+main .followers-cards-conatiner .followers-card .followers-number h2 {
   color: white;
   font-size: 6rem;
 }
@@ -370,7 +370,7 @@ main.toggle .followers-card .username span {
   color: #63687e;
 }
 
-main.toggle .followers-card .followers-number h3 {
+main.toggle .followers-card .followers-number h2 {
   color: #1e202a;
 }
 
